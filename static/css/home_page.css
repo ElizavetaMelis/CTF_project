@@ -1,0 +1,85 @@
+body {
+    background-color: #F8F8FF !important;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.cards-title {
+    margin-top: 2%;
+    color: black !important;
+}
+
+.cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+.card {
+    margin: 1%;
+    background-color: transparent !important;
+    color: black !important;
+    border: 2px solid #a9a9a9;
+    box-shadow: 5px 5px 5px #bebebe;
+}
+
+.btn-light:hover, .btn-outline-light:hover {
+    box-shadow: 0 0 25px #bebebe;
+    transition: 0.8s;
+}
+
+.pagination {
+    margin-top: 10%;
+    margin-bottom: 15%;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    background-color: #212529;
+    color: white;
+}
+.footer__text {
+    margin: 1%;
+    font-size: 10px;
+
+}
+
+/* modal styles */
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-body > input {
+    width: 70%;
+    margin-bottom: 2%;
+    height: 40px;
+    border: 2px solid #212529;
+    border-radius: 10px;
+    transition: 0.8s;
+}
+
+.modal-body >input:focus {
+    background-color: #212529;
+    color: white;
+    transition: 0.8s;
+}
+/* end modal styles */
+
+#login-pass-icon {
+    width: 5%;
+    height: 5%;
+    cursor: pointer;
+}
