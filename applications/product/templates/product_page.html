@@ -1,0 +1,48 @@
+{% extends 'home_page.html' %}
+{% load static %}
+    {% block css_links %}
+    <link rel="stylesheet" href="{% static 'css/product_page.css' %}">
+    {% endblock css_links %}
+
+
+  <!-- content here -->
+    {% block content %}
+    <div class="container">
+        <h2 class="cards-title">Task</h2>
+        <div class="cards">
+            {% for product in products %}
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{product.title}}</h5>
+                    <p class="card-text">{{product.category.title}}</p>
+                  <a href="{% url 'product-detail' pk=product.id %}" class="btn btn-light">Detail</a>
+                </div>
+              </div>
+            {% endfor %}
+        </div>
+    <!-- pagination -->
+    <nav aria-label="...">
+        <ul class="pagination">
+            {% if page_obj.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{page_obj.previous_page_number}}">Prev</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="?page={{page_obj.previous_page_number}}">{{page_obj.previous_page_number}}</a></li>
+            {% endif %}
+
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="#">{{page_obj.number}}</a>
+          </li>
+
+            {% if page_obj.has_next%}
+          <li class="page-item"><a class="page-link" href="?page={{page_obj.next_page_number}}">{{page_obj.next_page_number}}</a></li>
+          <li class="page-item">
+            <a class="page-link" href="?page={{page_obj.next_page_number}}">Next</a>
+          </li>
+            {% endif %}
+        </ul>
+      </nav>
+    <!-- end pagination -->
+    </div>
+    <!-- end content -->
+    {% endblock content %}
